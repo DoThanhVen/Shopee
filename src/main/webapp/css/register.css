@@ -1,0 +1,431 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 1350px !important;
+    box-sizing: border-box;
+    font-family: Helvetica Neue, Helvetica, Arial, 文泉驛正黑, WenQuanYi Zen Hei, Hiragino Sans GB, 儷黑 Pro, LiHei Pro, Heiti TC, 微軟正黑體, Microsoft JhengHei UI, Microsoft JhengHei, sans-serif;
+}
+.form-sign-up {
+	width: 1000px;
+}
+
+.header {
+	margin-left: 0;
+	height: 90px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 160px;
+}
+
+.header .header-left {
+	display: flex;
+	width: 235px;
+	position: relative;
+}
+
+.header .header-left label {
+	font-size: 23px;
+	color: black;
+	position: absolute;
+	right: 0;
+	bottom: -3px;
+}
+
+.header .header-right a {
+	text-decoration: none;
+	color: #ee4d2d;
+}
+
+.header .header-left a img {
+	width: 130px;
+}
+
+/*FORM REGISTER*/
+.form-register {
+	height: 600px;
+	background-color: rgb(238, 77, 45);
+}
+
+.form-register .form {
+	height: 100%;
+	margin: 0 auto;
+	background-image: url('/images/register-background.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.form-register .form .form-sign-up {
+	position: relative;
+	margin: 0 auto;
+	height: 70%;
+}
+
+.form-register .form .form-sign-up form {
+	position: absolute;
+	right: 0;
+	background-color: white;
+	width: 40%;
+	border-radius: 5px;
+}
+
+.form-register .form .form-sign-up form .heading {
+	font-size: 22px;
+	padding: 20px;
+	text-align: left;
+}
+
+.form-register .form .form-sign-up form .mb-3 {
+	text-align: center;
+	padding: 15px 0;
+}
+
+.form-register .form .form-sign-up form .mb-3 input {
+	width: 90%;
+	height: 45px;
+	padding: 12px;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+	font-size: 15px;
+}
+
+.form-register .form .form-sign-up form .mb-3 input:focus {
+	outline: 1px solid black;
+}
+
+.form-register .form .form-sign-up form button {
+	width: 90%;
+	height: 45px;
+	font-size: 16px;
+	color: white;
+	border: none;
+	background-color: #ee4d2d;
+	opacity: .7;
+}
+
+.form-register .form .form-sign-up form .more {
+	display: flex;
+	color: rgb(189, 186, 186);
+	justify-content: space-around;
+	align-items: center;
+	width: 90%;
+	margin: 0 auto;
+	padding: 15px 0;
+}
+
+.form-register .form .form-sign-up form .more .left, .form-register .form .form-sign-up form .more .right
+	{
+	width: 35%;
+	border-bottom: 1px solid rgb(189, 186, 186);
+}
+
+.form-register .form .form-sign-up form .more .center {
+	padding: 0;
+}
+
+.form-register .form .form-sign-up form .sign-up-more {
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.form-register .form .form-sign-up form .sign-up-more .col-sm-6 {
+	padding: 0;
+}
+
+.form-register .form .form-sign-up form .sign-up-more button {
+	width: 100%;
+	padding: 0;
+	background-color: white !important;
+	color: black;
+	border: 1px solid gray;
+	border-radius: 1px;
+	height: 40px;
+}
+
+.form-register .form .form-sign-up form .sign-up-more .facebook {
+	position: relative;
+	padding-right: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.form-register .form .form-sign-up form .sign-up-more .facebook i {
+	color: blue;
+	font-size: 20px;
+}
+
+.form-register .form .form-sign-up form .sign-up-more .google i {
+	color: #ee4d2d;
+	font-size: 20px;
+}
+
+.form-register .form .form-sign-up form .sign-up-more .google {
+	padding-left: 8px;
+}
+
+.form-register .form .form-sign-up form .sign-up-more button:hover {
+	background-color: #ebeaea !important;
+}
+
+.form-register .form .form-sign-up form .service {
+	padding: 15px 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 12px;
+}
+
+.form-register .form .form-sign-up form .service .content a {
+	text-decoration: none;
+	color: #ee4d2d;
+}
+
+.form-register .form .form-sign-up form .sign-in {
+	padding: 15px 0;
+	color: rgba(0, 0, 0, .26);
+	font-size: 15px;
+}
+
+.form-register .form .form-sign-up form .sign-in a {
+	text-decoration: none;
+	color: #ee4d2d;
+}
+/* FOOTER */
+.footer {
+	height: auto;
+	background-color: white;
+}
+
+.footer .row {
+	margin: 0 auto;
+}
+
+.footer .content-footer {
+	text-align: justify;
+}
+
+.footer .content-footer .heading {
+	font-weight: bold;
+}
+
+.footer .content-paragraph {
+	font-size: 13px;
+	margin-bottom: 16px;
+}
+
+.footer .heading {
+	margin-bottom: 16px;
+}
+
+.footer .row .col {
+	text-align: justify;
+	width: 20%;
+	padding: 0;
+	padding-right: 15px;
+}
+
+.footer .row .col a {
+	text-decoration: none;
+	font-size: 12px;
+	color: rgba(0, 0, 0, .54);
+	word-spacing: -2px;
+}
+
+.footer .row .col a:hover {
+	color: #ee4d2d;
+}
+
+.footer .row .col span {
+	color: rgba(0, 0, 0, .54);
+	font-size: .75rem;
+}
+
+.footer .row .col .menu {
+	color: rgba(0, 0, 0, .54);
+	font-weight: 500;
+}
+
+.footer .row .col .list-menu {
+	padding: 3px 0;
+}
+
+.footer .row .column-1, .footer .row .column-2, .footer .row .column-3,
+	.footer .row .column-4 {
+	position: relative;
+}
+
+.footer .p2 .row .column-1::after, .footer .p2 .row .column-2::after,
+	.footer .p2 .row .column-3::after, .footer .p2 .row .column-4::after {
+	position: absolute;
+	content: " ";
+	width: 1px;
+	height: 100%;
+	top: 0;
+	right: 7px;
+	background-color: rgba(0, 0, 0, .05);
+}
+
+.footer .p3 {
+	padding-top: 30px;
+	background-color: rgba(241, 241, 241, 0.5);
+}
+
+.footer .p3 .row {
+	display: flex;
+	justify-content: center;
+}
+
+.footer .p3 .column-1, .footer .p3 .column-2, .footer .p3 .column-3,
+	.footer .p3 .column-4, .footer .p3 .column-5 {
+	width: 20%;
+}
+
+.footer .p3 .row {
+	width: 80%;
+}
+
+.footer .p3 ul {
+	padding: 0;
+	width: 100%;
+}
+
+.footer .p3 li {
+	list-style: none;
+}
+
+.footer .p3 .heading {
+	font-size: 12px;
+}
+
+.footer .p3 a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, .7);
+	font-size: 12px;
+}
+
+.footer .p3 a:hover {
+	color: #ee4d2d;
+}
+
+.footer .p3 .column-3 ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer .p3 .column-3 ul li {
+	background-color: white;
+	padding: 5px 2px;
+	margin: 3px;
+	box-shadow: 1px 1px 1px #d3d1d1;
+	border-radius: 2px;
+}
+
+.footer .p3 .column-5 ul .QR li {
+	background-color: white;
+	margin-bottom: 3px;
+	margin-left: 5px;
+	box-shadow: 1px 1px 1px #d3d1d1;
+}
+
+.footer .p3 .column-5 ul .QR img {
+	padding: 5px;
+}
+
+.footer .p3 .column-5 ul .download li {
+	width: 5rem;
+	background-color: white;
+	padding: 2px 7px;
+	margin-bottom: 11px;
+	margin-left: 5px;
+	box-shadow: 1px 1px 1px #d3d1d1;
+	border-radius: 2px;
+}
+
+.footer .p3 .column-5 ul.list-item {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-self: baseline;
+}
+
+.footer .p3 .top {
+	border-bottom: 1px solid rgba(0, 0, 0, .05);
+	padding-bottom: 30px;
+}
+
+.footer .p3 .bottom .bottom-left {
+	width: 35%;
+}
+
+.footer .p3 .bottom .bottom-right {
+	text-align: center;
+}
+
+.footer .p3 .bottom {
+	padding: 35px 0;
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 15px;
+	color: rgba(0, 0, 0, .54);
+	;
+}
+
+.footer .p4 {
+	background-color: rgba(0, 0, 0, .01);
+	padding: 40px 0;
+	text-align: center;
+}
+
+.footer .p4 .row-1 ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.footer .p4 .row-1 ul li {
+	list-style: none;
+}
+
+.footer .p4 .row-1 ul li a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, .54);
+	font-size: 14px;
+}
+
+.footer .p4 .row-1 span {
+	padding: 0 18px;
+	color: rgba(0, 0, 0, .54);
+}
+
+.footer .p4 .row-2 ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.footer .p4 .row-2 ul li {
+	list-style: none;
+	width: 10%;
+	margin: 0 20px;
+	margin-top: 20px;
+}
+
+.footer .p4 .row-2 ul li img {
+	width: 100%;
+}
+
+.footer .p4 .row-3 {
+	color: rgba(0, 0, 0, .65);
+	font-size: 13px;
+}

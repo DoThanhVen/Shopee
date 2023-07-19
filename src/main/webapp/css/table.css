@@ -1,0 +1,18 @@
+.scrollable {
+  height: 250px; /* Chiều cao của vùng lăn chuột */
+  overflow: auto; /* Tạo thanh cuộn lăn */
+}
+
+/* Tùy chỉnh giao diện thanh cuộn */
+.scrollable::-webkit-scrollbar {
+  width: 8px; /* Chiều rộng của thanh cuộn */
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Màu sắc của thanh cuộn */
+  border-radius: 10px; /* Độ cong của cạnh của thanh cuộn */
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Màu sắc của thanh cuộn khi di chuột qua */
+}
