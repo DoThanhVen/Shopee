@@ -13,6 +13,7 @@ import org.springframework.util.NumberUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -215,7 +216,7 @@ public class AdminController {
 		return "html/admin/product";
 	}
 
-	@RequestMapping("/admin/manager-add/{id}")
+	@GetMapping("/admin/manager-add/{id}")
 	public String manager_add(Model model, @PathVariable("id") Integer id) {
 		Product product = productDAO.findById(id).get();
 		model.addAttribute("product", product);
@@ -238,12 +239,11 @@ public class AdminController {
 			}
 			productsFormat.add(newProduct); // thêm đối tượng mới vào danh sách sản phẩm đã được định dạng lại format
 		}
-
 		model.addAttribute("items", productsFormat);
 		session.setAttribute("IdProductADD", product.getId());
 		return "html/admin/container";
 	}
-	@RequestMapping("/admin/add-container")
+	@PostMapping("/admin/add-container")
 	public String addContainer(Model model,@RequestParam("size") String size,@RequestParam("color") String color
 			,@RequestParam("type") String type,@RequestParam("quantity") Integer quantity,@RequestParam("gender") Integer gender) {
 		if(quantity < 1) {
@@ -260,9 +260,11 @@ public class AdminController {
 				manager.setQuantity(quantity);
 				manager.setGender(gender);
 				managerDAO.save(manager);
+				model.addAttribute("product", null);
 				model.addAttribute("error", "Thêm thành công !");
 			} catch (Exception e) {
 				e.printStackTrace();
+				model.addAttribute("product", null);
 				model.addAttribute("error", "Thêm thất bại !");
 			}	
 		}
@@ -287,7 +289,7 @@ public class AdminController {
 		}
 
 		model.addAttribute("items", productsFormat);
-		return "html/admin/container";
+		return "redirect:/admin/container";
 	}
 	@RequestMapping("/admin/manager")
 	public String getAllProducts(Model model) {

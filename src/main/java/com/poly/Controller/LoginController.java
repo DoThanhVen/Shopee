@@ -31,7 +31,7 @@ public class LoginController {
 			if (account.getPassword().equals(password)) {
 				session.setAttribute("username", username);
 				session.setAttribute("fullname", account.getFullname());
-				session.setMaxInactiveInterval(30);
+				session.setMaxInactiveInterval(24*60*60);
 				if (account.isAdmin()) {
 					return "redirect:/admin/index";
 				} else {

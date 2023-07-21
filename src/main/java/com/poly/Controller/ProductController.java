@@ -75,7 +75,7 @@ public class ProductController {
 			} else {
 				OrderDetail order = new OrderDetail();
 				Account account = null;
-				account = accountDAO.findById((String) session.getAttribute("username")).get();				
+				account = accountDAO.findById((String) session.getAttribute("username")).get();
 				Product product = new Product();
 				product.setId(id);
 				order.setAccount(account);
@@ -95,7 +95,33 @@ public class ProductController {
 				orderDAO.save(order);
 			}
 		} else if ("action2".equals(action)) {
-			System.out.println("MUA NGAY!!!!!!!!!!!!!");
+			String orderCode = UUID.randomUUID().toString().replaceAll("-", "").substring(0, 12);
+			Bills bill = new Bills();
+			OrderDetail order = new OrderDetail();
+			Account account = null;
+			account = accountDAO.findById((String) session.getAttribute("username")).get();
+			Product product = new Product();
+			product.setId(id);
+			order.setAccount(account);
+			order.setProduct(product);
+			order.setQuantity(Integer.parseInt(request.getParameter("quantity")));
+			order.setAddress(account.getAddress());
+			if (request.getParameter("sizes") != null) {
+				order.setSize(request.getParameter("sizes"));
+			}
+			if (request.getParameter("colors") != null) {
+				order.setColor(request.getParameter("colors"));
+			}
+			if (request.getParameter("classifies") != null) {
+				order.setClassify(request.getParameter("classifies"));
+			}
+			order.setStatus("Chờ Xác Nhận");
+			orderDAO.save(order);
+			bill.setIdbill(orderCode);
+			bill.setStatus("Chờ Xác Nhận");
+			bill.setOrder(order);
+			billDAO.save(bill);
+			return "redirect:/home/order";
 		}
 		return "redirect:/home/cart";
 	}
@@ -109,22 +135,23 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/cart/buy-item", method = RequestMethod.POST)
-	public String handleSelectedProducts(@RequestParam(value = "ids[]") List<Integer> productIds, HttpServletRequest request) {
-	    if(productIds!=null) {
-	        String orderCode = UUID.randomUUID().toString().replaceAll("-", "").substring(0, 12);
-	        for (Integer id : productIds) {
-	            Bills bill = new Bills();
-	            OrderDetail order = new OrderDetail();
-	            order = orderDAO.findById(id).get();
-	            order.setStatus("Chờ Xác Nhận");
-	            orderDAO.save(order);
-	            bill.setIdbill(orderCode);
-	            bill.setStatus("Chờ Xác Nhận");
-	            bill.setOrder(order);
-	            billDAO.save(bill);
-	        }    
-	    }
-	    return "redirect:/home/index";
+	public String handleSelectedProducts(@RequestParam(value = "ids[]") List<Integer> productIds,
+			HttpServletRequest request) {
+		if (productIds != null) {
+			String orderCode = UUID.randomUUID().toString().replaceAll("-", "").substring(0, 12);
+			for (Integer id : productIds) {
+				Bills bill = new Bills();
+				OrderDetail order = new OrderDetail();
+				order = orderDAO.findById(id).get();
+				order.setStatus("Chờ Xác Nhận");
+				orderDAO.save(order);
+				bill.setIdbill(orderCode);
+				bill.setStatus("Chờ Xác Nhận");
+				bill.setOrder(order);
+				billDAO.save(bill);
+			}
+		}
+		return "redirect:/home/index";
 	}
 
 }

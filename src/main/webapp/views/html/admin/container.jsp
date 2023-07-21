@@ -84,9 +84,8 @@ select:focus {
 					<option value="S" name="size">S</option>
 					<option value="M" name="size">M</option>
 					<option value="L" name="size">L</option>
-					<option value="S" name="size">XL</option>
-					<option value="M" name="size">XXL</option>
-					<option value="L" name="size">XXL</option>
+					<option value="XL" name="size">XL</option>
+					<option value="XXL" name="size">XXL</option>
 				</select>
 			</c:if>
 			<c:if
